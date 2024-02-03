@@ -59,19 +59,24 @@ export default function Menu() {
       <h2>Our menu</h2>
 
       {pizzas.length > 0 ? (
-        <div className='pizzas'>
-          {pizzas
-            .filter((pizza) => pizza.soldOut === false)
-            .map((pizza) => (
+        <>
+          <p>
+            Authentic Italian cuisine. {pizzas.length} creative dishes to choose
+            from. All from our stone oven, all organic, all delicious.
+          </p>
+          <ul className='pizzas'>
+            {pizzas.map((pizza) => (
               <Pizza
                 key={pizza.id}
                 name={pizza.name}
                 ingredients={pizza.ingredients}
                 photoName={pizza.photoName}
                 price={pizza.price}
+                soldOut={pizza.soldOut}
               />
             ))}
-        </div>
+          </ul>
+        </>
       ) : (
         <p className='no-pizzas'>Sorry, no pizzas available at the moment</p>
       )}

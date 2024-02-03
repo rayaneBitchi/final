@@ -124,7 +124,6 @@ body {
   box-shadow: 0 0 1.6rem rgba(168, 143, 73, 0.665);
   cursor: pointer;
   transform: rotate3d(1, 1, 1, -5deg);
-  filter: grayscale(60%);
 }
 
 .pizza div {
@@ -163,6 +162,10 @@ body {
 .pizza.sold-out img {
   filter: grayscale();
   opacity: 0.8;
+}
+
+.pizza.sold-out img:hover {
+  cursor: not-allowed;
 }
 
 /* *************** */
